@@ -66,13 +66,14 @@ h1 {
     .temperatur {
         margin-bottom:1.95em;
     }
+    .ele-strip ul li {
+        padding: 0em 0.8em;
+    }
+
 }
 @media(max-width:1440px){
     .jspVerticalBar {
         width: 15px!important;
-    }
-    .ele-strip ul li {
-        padding: 0em 0.8em;
     }
     .element-right {
         width: 40%;

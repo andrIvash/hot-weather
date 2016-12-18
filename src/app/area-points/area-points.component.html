@@ -1,58 +1,29 @@
 <div class="element-left-bottom">
   <div class="ele-strip">
     <ul>
-      <li><a href="#">Hotel</a></li>
-      <li><a href="#">Fishing</a></li>
-      <li><a href="#">Tours</a></li>
-      <li class="anc-bor"><a href="#">Weather</a></li>
+      <li><a href="#" (click)="filtered($event)">Hotel</a></li>
+      <li><a href="#" (click)="filtered($event)" >Fishing</a></li>
+      <li><a href="#" (click)="filtered($event)" >Tours</a></li>
+      <li class="anc-bor" (click)="filtered($event)" ><a href="#">Weather</a></li>
     </ul>
   </div>
   <div class="village">
-    <h3 (click)="choose(places[1])">Righteous indignation & like</h3>
+    <h3>Righteous indignation & like</h3>
     <span class="line"> </span>
     <div class="activity_box">
       <div class="scrollbar" id="style-2">
-        <div class="activity-row">
+        <div *ngFor="let place of places | typeFilter:type; let i = index"
+             class="activity-row"
+             [ngClass]="{active: place.name == activePlace.name ? true : false}">
           <div class="activity-desc">
-            <h5>Resort Address</h5>
-            <p>Sed perspiciatis</p>
-            <p>Et harum quidem</p>
-            <h6>Tel:+1285 968 685</h6>
+            <h5 (click)="choose(place)">{{place?.name}}</h5>
+            <p>{{place?.description}}</p>
+            <h6>{{place?.phone}}</h6>
           </div>
           <div class="activity-img">
             <ul>
-              <li><img src='images/res.jpg'  alt=""/></li>
-              <li><img src='images/r1.jpg'  alt=""/></li>
-            </ul>
-          </div>
-          <div class="clear"> </div>
-        </div>
-        <div class="activity-row">
-          <div class="activity-desc">
-            <h5>Resort Address</h5>
-            <p>Sed ut perspiciatis</p>
-            <p>Et harum quidem</p>
-            <h6>Tel:+1285 968 685</h6>
-          </div>
-          <div class="activity-img">
-            <ul>
-              <li><img src='images/res.jpg'  alt=""/></li>
-              <li><img src='images/r1.jpg'  alt=""/></li>
-            </ul>
-          </div>
-          <div class="clear"> </div>
-        </div>
-        <div class="activity-row">
-          <div class="activity-desc">
-            <h5>Resort Address</h5>
-            <p>Sed ut perspiciatis</p>
-            <p>Et harum quidem</p>
-            <h6>Tel:+1285 968 685</h6>
-          </div>
-          <div class="activity-img">
-            <ul>
-              <li><img src='images/res.jpg'  alt=""/></li>
-              <li><img src='images/r1.jpg'  alt=""/></li>
+              <li><img [src]="place?.images[0]"  alt=""/></li>
+              <li><img [src]="place?.images[1]"  alt=""/></li>
             </ul>
           </div>
           <div class="clear"> </div>

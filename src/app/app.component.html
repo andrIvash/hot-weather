@@ -2,12 +2,12 @@
 
 <div class="element">
   <div class="element-left">
-    <div class="element-bg-img"><img src="assets/images/1.jpg" alt="" class="img-responsive"></div>
-    <app-area-points [places]="places" (choosePlace)="activePlace=$event"></app-area-points>
+    <div class="element-bg-img"><img [src]="activePlace?.images[0]" alt="" class="img-responsive"></div>
+    <app-area-points [activePlace]="activePlace" [places]="places" (choosePlace)="activePlace=$event"></app-area-points>
   </div>
   <div class="element-right">
-    <app-temperatur [places]="places"></app-temperatur>
-    <app-teddy-bear [places]="places"></app-teddy-bear>
+    <app-temperatur [activePlace]="activePlace"></app-temperatur>
+    <app-teddy-bear [activePlace]="activePlace"></app-teddy-bear>
   </div>
   <div class="clear"></div>
 </div>

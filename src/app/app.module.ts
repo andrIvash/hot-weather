@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { AreaPointsComponent } from './area-points/area-points.component';
 import { TemperaturComponent } from './temperatur/temperatur.component';
 import { TeddyBearComponent } from './teddy-bear/teddy-bear.component';
+import { TypeFilterPipe } from './type-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     AreaPointsComponent,
     TemperaturComponent,
-    TeddyBearComponent
+    TeddyBearComponent,
+    TypeFilterPipe
   ],
   imports: [
     BrowserModule,

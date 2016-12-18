@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TemperaturComponent implements OnInit {
 
   @Input()
-  public places;
+  public activePlace;
   constructor() { }
 
   ngOnInit() {
