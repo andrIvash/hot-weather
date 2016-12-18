@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-area-points',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreaPointsComponent implements OnInit {
 
+  @Input()
+  public places;
+  @Output()
+  public choosePlace: EventEmitter<Place> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public choose(place: Place) {
+    console.log(place.name);
+    this.choosePlace.emit(place);
   }
 
 }

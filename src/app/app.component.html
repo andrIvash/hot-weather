@@ -1,13 +1,13 @@
-<h1>Hot Weather Widget | {{title}}</h1>
+<h1>Hot Weather Widget | {{activePlace.name}}</h1>
 
 <div class="element">
   <div class="element-left">
     <div class="element-bg-img"><img src="assets/images/1.jpg" alt="" class="img-responsive"></div>
-    <app-area-points></app-area-points>
+    <app-area-points [places]="places" (choosePlace)="activePlace=$event"></app-area-points>
   </div>
   <div class="element-right">
-    <app-temperatur></app-temperatur>
-    <app-teddy-bear></app-teddy-bear>
+    <app-temperatur [places]="places"></app-temperatur>
+    <app-teddy-bear [places]="places"></app-teddy-bear>
   </div>
   <div class="clear"></div>
 </div>
