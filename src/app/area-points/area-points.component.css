@@ -103,6 +103,7 @@ i.text-info{
 }
 .activity-row{
     margin-bottom:1em;
+    cursor: pointer;
 }
 .scrollbar{
     height:115px;
@@ -166,6 +167,5 @@ i.text-info{
 }
 
 .village h5 {
-    cursor: pointer;
     text-decoration: underline;
 }
